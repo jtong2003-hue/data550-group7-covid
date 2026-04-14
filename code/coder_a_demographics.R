@@ -1,5 +1,6 @@
 ## coder_a_demographics.R — Demographics and Comorbidity Profile
 ## Coder A: Lidong Yu
+## Added by Lidong Yu for DATA550 assignment
 
 here::i_am("code/coder_a_demographics.R")
 source(here::here("code", "utils.R"))
