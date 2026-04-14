@@ -1,0 +1,13 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+output/coder_a/*
+output/coder_b/*
+output/coder_c/*
+report/final_report.html
+!output/coder_a/.gitkeep
+!output/coder_b/.gitkeep
+!output/coder_c/.gitkeep
+renv/library/
+renv/staging/

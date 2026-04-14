@@ -1,0 +1,87 @@
+---
+title: "`r yaml::read_yaml(here::here('config', 'config.yml'))$report_title`"
+author: "Group 7 — DATA 550"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+knitr::opts_knit$set(root.dir = here::here())
+config <- yaml::read_yaml(here::here("config", "config.yml"))
+```
+
+## Configuration
+
+This report was generated with the following parameters:
+
+- **Age range**: `r config$age_range[1]` to `r config$age_range[2]`
+- **Sex filter**: `r config$sex_filter`
+- **Confirmed COVID only**: `r config$confirmed_only`
+- **Data file**: `r config$data_file`
+
+---
+
+# 1. Demographics and Comorbidity Profile
+
+## Table 1 — Patient Demographics Summary
+
+```{r table-1}
+readRDS(here::here("output", "coder_a", "table_1.rds"))
+```
+
+## Figure 1 — Age Distribution by Sex
+
+```{r fig-1}
+knitr::include_graphics(here::here("output/coder_a/fig1_age_distribution.png"), rel_path = FALSE)
+```
+
+## Figure 2 — Comorbidity Prevalence
+
+```{r fig-2}
+knitr::include_graphics(here::here("output/coder_a/fig2_comorbidity_prevalence.png"), rel_path = FALSE)
+```
+
+---
+
+# 2. COVID Severity and Healthcare Utilization
+
+## Table 2 — COVID Classification Distribution
+
+```{r table-2}
+readRDS(here::here("output", "coder_b", "table_2.rds"))
+```
+
+## Figure 3 — Patient Type by Age Group
+
+```{r fig-3}
+knitr::include_graphics(here::here("output/coder_b/fig3_patient_type_age.png"), rel_path = FALSE)
+```
+
+## Figure 4 — Medical Unit Type Distribution
+
+```{r fig-4}
+knitr::include_graphics(here::here("output/coder_b/fig4_medical_unit.png"), rel_path = FALSE)
+```
+
+---
+
+# 3. Clinical Outcomes Analysis
+
+## Table 3 — Outcome Summary (Confirmed Cases)
+
+```{r table-3}
+readRDS(here::here("output", "coder_c", "table_3.rds"))
+```
+
+## Figure 5 — Mortality Rate by Age Group
+
+```{r fig-5}
+knitr::include_graphics(here::here("output/coder_c/fig5_mortality_age.png"), rel_path = FALSE)
+```
+
+## Figure 6 — Outcomes by Number of Comorbidities
+
+```{r fig-6}
+knitr::include_graphics(here::here("output/coder_c/fig6_outcomes_comorbidity.png"), rel_path = FALSE)
+```

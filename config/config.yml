@@ -1,0 +1,5 @@
+data_file: "data/covid_sub.csv"
+age_range: [0, 100]
+sex_filter: "all"
+confirmed_only: false
+report_title: "COVID-19 Cases in Mexico — Automated Data Analysis Report"
