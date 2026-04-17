@@ -44,7 +44,7 @@ ggsave(here::here("output", "coder_b", "fig3_patient_type_age.png"),
        plot = fig3, width = 9, height = 5, dpi = 300)
 
 # ── Figure 4: Medical Unit Level Distribution ─────────────────────────────────
-# USMER: 1 = first level, 2 = second level, 3 = third level (approximate)
+# USMER: 1 = first level, 2 = second level, 3 = third level
 df <- df %>%
   mutate(
     usmer_label = case_when(
